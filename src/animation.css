@@ -1,0 +1,103 @@
+
+@media (prefers-reduced-motion: no-preference) {
+  .spinner {
+    animation: Spinner infinite 1s linear;
+  }
+  .specials{
+    animation: container 0.5s ease-in-out;
+  }
+}
+@media only screen and (min-width: 768px){
+  .profile{
+      padding-top : 50px;
+      margin-top: -80px;
+  }
+  .dp{
+    margin: 0 auto;
+    width: 60%;
+    height: 30%;
+  }
+}
+
+.bit-info span{
+  margin-right : 10px;
+  color: rgb(83, 80, 80);
+  font-size: small;
+}
+@keyframes Spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes container {
+  from {
+    margin-top : 0
+  }
+  to {
+    margin-top : -80px;
+  }
+}
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+.dp-container {
+  position: relative;
+}
+img{
+  object-fit: cover;
+}
+.username{
+  font-size: 28px;
+}
+.dp {
+  opacity: 1;
+  display: block;
+  width: 35vh;
+  margin: 0 auto;
+  height: 35vh;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.dp-container:hover .dp {
+  opacity: 0.3;
+}
+
+.dp-container:hover .edit {
+  opacity: 1;
+}
+
+.change {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}

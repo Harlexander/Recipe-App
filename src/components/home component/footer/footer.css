@@ -1,0 +1,10 @@
+.footer .fa{
+    padding: 20px;
+    color : rgb(97, 90, 90)
+}
+
+footer{
+    margin-top : 40px;
+    padding : 40px 10px;
+    background: rgb(25, 53, 90);
+}

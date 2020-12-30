@@ -1,0 +1,26 @@
+.tab-pane {
+    overflow: hidden;
+    background : whitesmoke;
+}
+.tab-pane .row div{
+    font-size : 0;
+    
+}
+.tab-pane .row div a{
+    font-size : 13px;
+}
+.tab-pane .row div span{
+    font-size : 13px;
+}
+.nav-tasb> .nav-item> a{
+    background: white !important;
+    margin: 0 10px;
+}
+.nav-tabs > .nav-item> .active{
+    background: whitesmoke !important
+}
+.checked {
+    color : orange
+}
+
+
