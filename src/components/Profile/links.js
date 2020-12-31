@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { firestore } from '../create-recipe component/firebase/firebase'
 
 const Links = ({user}) => {
-    const stored = JSON.parse(sessionStorage.getItem("details")) 
+    const stored = JSON.parse(sessionStorage.getItem("details")) || []
     const [links, setLinks] = useState({
         facebook : ""|| stored.facebookUrl,
         instagram : "" || stored.instagramUrl,

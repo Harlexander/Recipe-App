@@ -11,7 +11,7 @@ class Footer extends Component {
                 <div className="row p-md-5">
                     <div className="col-md-4 text-muted">
                         <img src={Logo} className="img-fluid mb-4"/>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum....</p>
+                        <p>Peachy is a brand created for the main aim of exploring all the possible aspect of foods and give users the opportunity to share there skill and thoughts on food. This is a place to bring the foodie's together....</p>
                         <br />
                         <Button classes={"btn-primary btn"} content={"Read More"} />
                     </div>

@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
+import { Usercontext } from '../../../context/context';
 import { Yields, CookingTime, Category, Cuisine } from '../../../dropdown tags/select';
 import { firestore, storage } from '../firebase/firebase';
 
-const Form = ({user}) => {
+const Form = () => {
+    const {user} = useContext(Usercontext)
     const [inputs, setInputs] = useState([{recipes : ""}])
     const [textarea, setText] = useState([{instruction : ""}]);
     const [image, setImage] = useState(null)
@@ -12,7 +14,7 @@ const Form = ({user}) => {
         cuisine : "",
         category : "",
         time : "",
-        user : user,
+        user : user ? user.uid : null,
         yields : "",
         method : "",
         difficulty : "",

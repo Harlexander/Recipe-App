@@ -1,4 +1,4 @@
-import {Component}from "react"
+import react, {useState, useEffect}from "react"
 import { Link } from "react-router-dom";
 import Footer from './footer/footer.js'
 import Image from './asideImage'
@@ -6,23 +6,22 @@ import Article from './Article.js'
 import "./home.css"
 import Latest from "./latest.js";
 import Design from "./design.js";
+import { firestore } from "../create-recipe component/firebase/firebase.js";
 
-class Home extends Component {
+const Home = () =>{
 
-    render(){
         return(
             <>
            <Specials />
            <Latest />
            <Design/>
            
-           <HotMeals redirect={this.props.text}/>
+           <HotMeals redirect={text}/>
            <Image />
-           <Article col={"col-md-4"}  redirect={this.props.text}/>
-           <Footer  redirect={this.props.text}/>
+           <Article col={"col-md-4"}  redirect={text}/>
+           <Footer  redirect={text}/>
            </>
         )
-    }
 }
 
 const Specials = () => {

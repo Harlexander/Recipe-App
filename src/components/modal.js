@@ -4,7 +4,7 @@ import { firestore } from './create-recipe component/firebase/firebase'
 
 const Modal = () => {
     const value = useContext(Usercontext)
-    const stored = JSON.parse(sessionStorage.getItem("details")) || []
+    const stored =  JSON.parse(sessionStorage.getItem("details")) || []
     const [state, setState] = useState({
         fullname : "" || stored.fullname,
         nickname : ""  || stored.nickname,

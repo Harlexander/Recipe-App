@@ -19,8 +19,8 @@ function Profile() {
     const [basic, setBasic] = useState({});
     const redirect = () => {
         if(currentuser.loading === false){
-            if(currentuser.user === null){
-                history.push('/login') 
+            if(!currentuser.user){
+                history.push('/login')
             }else{
                 currentuser.user.providerData.forEach(element => {
                     setBasic(element)})
@@ -30,8 +30,6 @@ function Profile() {
                     setstate(data || [])
                     setUser(currentuser.user.uid)
                     sessionStorage.setItem("details", JSON.stringify(data))
-                    setLoader(false)
-                    
             })
         }
     }

@@ -7,16 +7,18 @@ const Customresult = ({value}) => {
     const [length, setLength] = useState("")
     const [items, setItems] = useState([])
 
-    const fetch = () => {
-        firestore.collection("recipes").where("title", "==", `${value}`)
-    .onSnapshot(({docs}) => {
-        const rep = docs.map(doc => ({...doc.data(), id : doc.id, posted : doc.timeStamp} ))
-        setLength(rep.length)
-        setItems(rep)
-        console.log(rep)
-    });
-    }
-    useEffect(() => {fetch() }, [value])
+    
+    useEffect(() => {
+        const fetch = () => {
+            firestore.collection("recipes").where("title", "==", `${value}`)
+            .onSnapshot(({docs}) => {
+            const rep = docs.map(doc => ({...doc.data(), id : doc.id, posted : doc.timeStamp} ))
+            setLength(rep.length)
+            setItems(rep)
+            console.log(rep)
+        });
+        }
+        fetch() }, [value])
     const {url} = useRouteMatch()
     return (
         <div>

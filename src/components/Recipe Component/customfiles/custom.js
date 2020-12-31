@@ -5,7 +5,6 @@ import { firestore } from '../../create-recipe component/firebase/firebase'
 import Ingredients from '../ingredients'
 import Instruction from './instruction'
 import User from './user'
-import { Usercontext } from '../../../context/context'
 
 const Custom = () => {
     const {url} = useRouteMatch()
@@ -16,6 +15,7 @@ const Custom = () => {
 
     const getData = () => {
         if(loading === true){
+            console.log(id)
              firestore.collection("recipes").doc(id)
             .get()
             .then( docs => {
@@ -24,8 +24,7 @@ const Custom = () => {
             })
             }
            }
-    useEffect(() => {getData()}, [])
-    console.log(details)
+    useEffect(() => {getData()}, [loading])
 
     const html = (<div>
         <h3>{details.title}</h3>

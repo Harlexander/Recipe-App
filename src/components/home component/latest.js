@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Usercontext } from '../../context/context'
 import { firestore } from '../create-recipe component/firebase/firebase'
 
 const Latest = () => {
     const [data, setData] = useState([])
     const [loader, setLoader] = useState(true) 
-    const get = () => {
-        if(loader === true){
-            firestore.collection("recipes").orderBy("posted", "desc").limit(4)
-           .get()
-           .then( (snapshot => setData(snapshot.docs)))
-           .then(() => {setLoader(false)})
-           }
-    };
+    const user = useContext(Usercontext)
+    
     useEffect(() => {
-           get()
-        }, [loader])
+        const get =
+                firestore.collection("recipes").orderBy("posted", "desc").limit(4)
+               .onSnapshot((doc) => {
+                setData(doc.docs)
+               })
+         return () => get()
+        }, [])
 
     function timeDifference(current, previous) {
 
