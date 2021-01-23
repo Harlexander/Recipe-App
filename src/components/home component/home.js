@@ -6,9 +6,8 @@ import Article from './Article.js'
 import "./home.css"
 import Latest from "./latest.js";
 import Design from "./design.js";
-import { firestore } from "../create-recipe component/firebase/firebase.js";
 
-const Home = () =>{
+const Home = ({text}) =>{
 
         return(
             <>

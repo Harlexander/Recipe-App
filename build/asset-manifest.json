@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.86780eff.chunk.css",
-    "main.js": "/static/js/main.20b335a0.chunk.js",
-    "main.js.map": "/static/js/main.20b335a0.chunk.js.map",
+    "main.js": "/static/js/main.b4054c93.chunk.js",
+    "main.js.map": "/static/js/main.b4054c93.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3e6a5a54.js",
     "runtime-main.js.map": "/static/js/runtime-main.3e6a5a54.js.map",
-    "static/js/2.0e5d8263.chunk.js": "/static/js/2.0e5d8263.chunk.js",
-    "static/js/2.0e5d8263.chunk.js.map": "/static/js/2.0e5d8263.chunk.js.map",
+    "static/js/2.09d5a42a.chunk.js": "/static/js/2.09d5a42a.chunk.js",
+    "static/js/2.09d5a42a.chunk.js.map": "/static/js/2.09d5a42a.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.86780eff.chunk.css.map": "/static/css/main.86780eff.chunk.css.map",
-    "static/js/2.0e5d8263.chunk.js.LICENSE.txt": "/static/js/2.0e5d8263.chunk.js.LICENSE.txt",
+    "static/js/2.09d5a42a.chunk.js.LICENSE.txt": "/static/js/2.09d5a42a.chunk.js.LICENSE.txt",
     "static/media/Hong-Kong-cuisine.bd99f3d9.jpg": "/static/media/Hong-Kong-cuisine.bd99f3d9.jpg",
     "static/media/LogoMakr-4NpRxA 2.803fa062.png": "/static/media/LogoMakr-4NpRxA 2.803fa062.png",
     "static/media/LogoMakr-4NpRxA.905053d6.png": "/static/media/LogoMakr-4NpRxA.905053d6.png",
@@ -23,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3e6a5a54.js",
-    "static/js/2.0e5d8263.chunk.js",
+    "static/js/2.09d5a42a.chunk.js",
     "static/css/main.86780eff.chunk.css",
-    "static/js/main.20b335a0.chunk.js"
+    "static/js/main.b4054c93.chunk.js"
   ]
 }
