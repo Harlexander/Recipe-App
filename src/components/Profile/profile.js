@@ -69,9 +69,9 @@ function Profile() {
                   <div className="col-md-6">
                       <div className="dp-container m-2">
                     <img src={basic.photoURL ? basic.photoURL : img} alt="displayPicture"  className="img-thumbnail dp"/>
-                    <div class="edit">
+                    <div className="edit">
                     <input id="image" type="file" className="d-block w-25" onChange={addImage}/>
-                    <button class="button btn-primary btn btn-sm m-2" onClick={put}>Update Image</button>
+                    <button className="button btn-primary btn btn-sm m-2" onClick={put}>Update Image</button>
                     </div>
                       </div>
                     
@@ -89,13 +89,13 @@ function Profile() {
                           <li className="list-group-item">Country : <span>{state.country}</span></li>
                         </ul>
                         <div>
-                        <button className="btn btn-primary rounded-circle fa fa-facebook shadow p-3 m-3" type="button"></button>
-                        <button className="btn btn-danger rounded-circle fa fa-instagram shadow  p-3 m-3" type="button"></button>
-                        <button className="btn btn-dark rounded-circle fa fa-twitter shadow  p-3 m-3" type="button"></button>
-                        <button class="btn btn-danger pull-left my-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <a href={state.facebookUrl} target="_parent"><button className="btn btn-primary rounded-circle fa fa-facebook shadow p-3 m-3" type="button"></button></a>
+                        <a href={state.instagramUrl} target="_blank"><button className="btn btn-danger rounded-circle fa fa-instagram shadow  p-3 m-3" type="button"></button></a>
+                        <a href={state.twitterUrl} target="_blank"><button className="btn btn-dark rounded-circle fa fa-twitter shadow  p-3 m-3" type="button"></button></a>
+                        <button className="btn btn-danger pull-left my-4" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             Update Links
                         </button>
-                        <button type="button" class="btn btn-primary pull-right my-4" data-toggle="modal" data-target="#updateprofile">
+                        <button type="button" className="btn btn-primary pull-right my-4" data-toggle="modal" data-target="#updateprofile">
                         Update Profile
                         </button>
                         </div>

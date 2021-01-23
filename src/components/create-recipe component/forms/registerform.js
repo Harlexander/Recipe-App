@@ -70,11 +70,11 @@ const Registerform = () => {
             </div>
             <div className="mb-3">
                 <label  className="form-label">Mobile Number</label>
-                <div class="input-group mb-3">
-                <div class="input-group-prepend w-25">
+                <div className="input-group mb-3">
+                <div className="input-group-prepend w-25">
                     <CountryCode onChange={handlechange}/>
                 </div>
-                <input type="text" class="form-control w-75"name="mobile" value={state.mobile} className="form-control" required  onChange={handlechange} aria-describedby="basic-addon3"/>
+                <input type="text" className="form-control w-75"name="mobile" value={state.mobile} className="form-control" required  onChange={handlechange} aria-describedby="basic-addon3"/>
                 </div>
             </div>
             <div className="mb-3">

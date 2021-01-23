@@ -8,7 +8,7 @@ const Header = ({onClick, text}) => {
     <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top" style={img}>
       <img src={Logo} style={logo} className="m-auto"/>
-      <button className="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse w-50" id="navbarText">

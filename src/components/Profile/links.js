@@ -28,24 +28,24 @@ const Links = ({user}) => {
     console.log(user)
     return (
         <div>
-            <div class="collapse" id="collapseExample">
-                        <div class="input-group py-1">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Facebook</span>
+            <div className="collapse" id="collapseExample">
+                        <div className="input-group py-1">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text">Facebook</span>
                         </div>
-                        <input type="text" name="facebook" value={links.facebook} onChange={setState} class="form-control"/>
+                        <input type="text" name="facebook" value={links.facebook} onChange={setState} className="form-control"/>
                         </div>
-                        <div class="input-group py-1">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Twitter</span>
+                        <div className="input-group py-1">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text">Twitter</span>
                         </div>
-                        <input type="text" name="twitter" value={links.twitter} onChange={setState} class="form-control"/>
+                        <input type="text" name="twitter" value={links.twitter} onChange={setState} className="form-control"/>
                         </div>
-                        <div class="input-group py-1">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Instagram</span>
+                        <div className="input-group py-1">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text">Instagram</span>
                         </div>
-                        <input type="text" name="instagram" value={links.instagram} onChange={setState} class="form-control"/>
+                        <input type="text" name="instagram" value={links.instagram} onChange={setState} className="form-control"/>
                         </div>
                         <button className="btn btn-success" onClick={setLink}>Update</button>
                         </div>

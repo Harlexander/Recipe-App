@@ -1,4 +1,3 @@
-import react from "react"
 import {useRouteMatch, Route } from "react-router-dom";
 import Footer from './../home component/footer/footer'
 import Spinner from './../spinner/spinner'

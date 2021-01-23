@@ -1,5 +1,6 @@
 import react, { useContext, useState } from 'react'
 import { Usercontext } from '../context/context'
+import { Countries } from '../dropdown tags/select'
 import { firestore } from './create-recipe component/firebase/firebase'
 
 const Modal = () => {
@@ -58,7 +59,7 @@ const Modal = () => {
             </div>
             <div className="mb-3">
                 <label  className="form-label">Country</label>
-                <input type="text" name="country" value={state.country} className="form-control" required  onChange={handlechange}/>
+               <Countries onChange={handlechange}/>
             </div>
             <div className="mb-3">
                 <label  className="form-label">Edit View</label>

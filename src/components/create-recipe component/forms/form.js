@@ -168,15 +168,15 @@ const Form = () => {
             <div className="radio-group my-4">
                 <label className="font-weight-bold">Recipe difficulty</label>
                 <br />
-                <div class="form-check-inline" onChange={radio}> 
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optradio" value="Advanced" />Advanced
+                <div className="form-check-inline" onChange={radio}> 
+                    <label className="form-check-label">
+                        <input type="radio" className="form-check-input" name="optradio" value="Advanced" />Advanced
                     </label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optradio" value="Intermediate"/>Intermediate
+                    <label className="form-check-label">
+                        <input type="radio" className="form-check-input" name="optradio" value="Intermediate"/>Intermediate
                     </label>
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optradio" value="Easy"/>Easy
+                    <label className="form-check-label">
+                        <input type="radio" className="form-check-input" name="optradio" value="Easy"/>Easy
                     </label>
                     </div>
             </div>
@@ -185,39 +185,39 @@ const Form = () => {
             <div className="check-group my-5">
                 <label className="font-weight-bold">Method Of Cooking</label>
                 <br />
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="frying" value="frying" onChange={checkbox}/>frying
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="frying" value="frying" onChange={checkbox}/>frying
                 </label>
                 </div>
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="baking" value="Baking"  onChange={checkbox}/>Baking
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="baking" value="Baking"  onChange={checkbox}/>Baking
                 </label>
                 </div>
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="grilling" value="Grilling"  onChange={checkbox}/>Grilling
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="grilling" value="Grilling"  onChange={checkbox}/>Grilling
                 </label>
                 </div>
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="roasting" value="Roasting"  onChange={checkbox}/>Roasting
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="roasting" value="Roasting"  onChange={checkbox}/>Roasting
                 </label>
                 </div>
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="searing" value="Searing"  onChange={checkbox}/>Searing
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="searing" value="Searing"  onChange={checkbox}/>Searing
                 </label>
                 </div>
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="stewing" onChange={checkbox} value="stewing" />Stewing
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="stewing" onChange={checkbox} value="stewing" />Stewing
                 </label>
                 </div>
-                <div class="form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" name="steaming" onChange={checkbox} value="steaming" />Steaming
+                <div className="form-check-inline">
+                <label className="form-check-label">
+                    <input type="checkbox" className="form-check-input" name="steaming" onChange={checkbox} value="steaming" />Steaming
                 </label>
                 </div>
             </div>

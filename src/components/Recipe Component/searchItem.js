@@ -17,11 +17,10 @@ const SearchItem = ({array}) => {
             <p className="d-inline mr-1  font-weight-light"><span className="text-success"> Calories : </span> {array.calories} </p> 
         </div>
         <br />
-        <p style={desc}>It may not be in my best interest to admit this, but here goes nothing: grilling chicken scares me. It’s just too easy to get wrong. Black, cremated skin on the outside with an interior so pink that just looking at it might give you salmonella. Or worse, well-cooked flesh ...</p>
+        <p style={desc}>{array.label} is a {array.cuisineType} Meal, which is served mostly at {array.mealType} also {array.healthLabels[0]} , {array.healthLabels[1]} and {array.healthLabels[2]}...</p>
         <Link to={`${url}/${newLabel}`}><Button content={"view recipe"} classes={"btn-outline-primary btn"}/></Link>
         </div>
         </div>
-        
     )
 }
 

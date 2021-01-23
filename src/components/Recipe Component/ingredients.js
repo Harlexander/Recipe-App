@@ -1,4 +1,3 @@
-import react from 'react'
 import brand from './../../images/Untitled.png'
 
  const Ingredients = ({recipe}) => {
