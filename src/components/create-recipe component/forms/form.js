@@ -94,7 +94,7 @@ const Form = () => {
         setImage(file)
     }
  
-    const put = () => {
+    const put = (e) => {
        const uploadTask =  storage.ref(`recipeImages/${state.user}-${state.title}`).put(image)
         uploadTask.on('state_changed', 
         (snapShot) => {
@@ -121,6 +121,20 @@ const Form = () => {
                 posted : new Date()
             })
             .then( () => {
+                setState( 
+                {title : "",
+                description : "",
+                cuisine : "",
+                category : "",
+                time : "",
+                user : user ? user.uid : null,
+                yields : "",
+                method : "",
+                difficulty : "",
+                ingredients : [],
+                instruction : []})
+                setInputs([{recipes : ""}])
+                setText([{instruction : ""}])
                 alert("uploaded successfully")
             })
            })

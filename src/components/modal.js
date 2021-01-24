@@ -3,76 +3,22 @@ import { Usercontext } from '../context/context'
 import { Countries } from '../dropdown tags/select'
 import { firestore } from './create-recipe component/firebase/firebase'
 
-const Modal = () => {
+const Modal = ({id, head, body, bottom}) => {
     const value = useContext(Usercontext)
-    const stored =  []
-    const [state, setState] = useState({
-        fullname : "" || stored.fullname,
-        nickname : ""  || stored.nickname,
-        skills : ""  || stored.skills,
-        mobile : ""  || stored.mobile,
-        country : ""  || stored.country,
-        bio : ""  || stored.bio,
-    })
-    const updateProfile = (e) => {
-        e.preventDefault()
-        value.user.updateProfile({
-            displayName : state.nickname
-        })
-        firestore.collection("users").doc(value.user.uid).set(state)
-        .then(()=> {
-            alert("user update successfull")
-        })
-    }
-    const handlechange = (e) => {
-        const {name, value}  = e.target
-        setState(prev =>( {
-            ...prev,
-            [name] : value
-        }))
-     }
+    
     return(
-        <div  class="modal fade" tabindex="-1" id="updateprofile" aria-hidden="false">
-        <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Update Profile {state.skills}</h5>
+        <div  className="modal fade" tabindex="-1" id={id} aria-hidden="false">
+        <div className="modal-dialog">
+        <div className="modal-content">
+        <div className="modal-header">
+             {head}
         </div>
-        <div class="modal-body">
-        <form onSubmit={updateProfile}>
-        <div className="mb-3">
-                <label  className="form-label">Full Name</label>
-                <input type="text" name="fullname" value={state.fullname} className="form-control" required  onChange={handlechange} />
-                <div className="form-text">We'll never share your information with anyone else.</div>
-            </div>
-            <div className="mb-3">
-                <label  className="form-label">Nickname / Profile Name</label>
-                <input type="text" name="nickname" value={state.nickname} className="form-control" required onChange={handlechange}/>
-            </div>
-            <div className="mb-3">
-                <label  className="form-label">Skills</label>
-                <input type="text" name="skills" value={state.email} className="form-control" required  onChange={handlechange}/>
-            </div>
-            <div className="mb-3">
-                <label  className="form-label">Mobile Number</label>
-                <input type="text" name="mobile" value={state.mobile} className="form-control" required  onChange={handlechange}/>
-            </div>
-            <div className="mb-3">
-                <label  className="form-label">Country</label>
-               <Countries onChange={handlechange}/>
-            </div>
-            <div className="mb-3">
-                <label  className="form-label">Edit View</label>
-                <textarea type="text" name="bio" value={state.view} className="form-control" required  onChange={handlechange}/>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" className="btn btn-primary">Submit</button>
+        <div className="modal-body">
+             {body}
         </div>
-            
-            </form>
+        <div className="modal-footer">
+             {bottom}
         </div>
-        
         </div>
     </div>
 </div>

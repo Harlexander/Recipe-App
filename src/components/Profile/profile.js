@@ -5,13 +5,13 @@ import { Usercontext } from '../../context/context';
 import { auth, firestore, storage } from '../create-recipe component/firebase/firebase'
 import Modal from '../modal';
 import Links from './links';
+import { Countries } from '../../dropdown tags/select';
 
 function Profile() {
 
     const currentuser = useContext(Usercontext)
     const history = useHistory()
    
-    const [loader, setLoader] = useState(true)
     const [image, setImage] = useState(null)
     const [user, setUser] = useState(null)
     const [state, setstate] = useState({});
@@ -61,12 +61,71 @@ function Profile() {
        })
    }
 
+   const stored =  []
+    const [modal, setModal] = useState({
+        fullname : "" || stored.fullname,
+        nickname : ""  || stored.nickname,
+        skills : ""  || stored.skills,
+        mobile : ""  || stored.mobile,
+        country : ""  || stored.country,
+        bio : ""  || stored.bio,
+    })
+    const updateProfile = (e) => {
+        e.preventDefault()
+        currentuser.user.updateProfile({
+            displayName : modal.nickname
+        })
+        firestore.collection("users").doc(currentuser.user.uid).set(state)
+        .then(()=> {
+            alert("user update successfull")
+        })
+    }
+    const handlechange = (e) => {
+        const {name, value}  = e.target
+        setModal(prev =>( {
+            ...prev,
+            [name] : value
+        }))
+     }
+
    console.log(currentuser.user)
     useEffect(() => {redirect()} , [currentuser.user])
     return (
         <div>
-            <Modal />
-
+            <Modal id="updateprofile"
+            head ={<h5 class="modal-title">Update Profile {state.skills}</h5>}
+            body = { <form onSubmit={updateProfile}>
+            <div className="mb-3">
+                    <label  className="form-label">Full Name</label>
+                    <input type="text" name="fullname" value={state.fullname} className="form-control" required  onChange={handlechange} />
+                    <div className="form-text">We'll never share your information with anyone else.</div>
+                </div>
+                <div className="mb-3">
+                    <label  className="form-label">Nickname / Profile Name</label>
+                    <input type="text" name="nickname" value={state.nickname} className="form-control" required onChange={handlechange}/>
+                </div>
+                <div className="mb-3">
+                    <label  className="form-label">Skills</label>
+                    <input type="text" name="skills" value={state.email} className="form-control" required  onChange={handlechange}/>
+                </div>
+                <div className="mb-3">
+                    <label  className="form-label">Mobile Number</label>
+                    <input type="text" name="mobile" value={state.mobile} className="form-control" required  onChange={handlechange}/>
+                </div>
+                <div className="mb-3">
+                    <label  className="form-label">Country</label>
+                   <Countries onChange={handlechange}/>
+                </div>
+                <div className="mb-3">
+                    <label  className="form-label">Edit View</label>
+                    <textarea type="text" name="bio" value={state.view} className="form-control" required  onChange={handlechange}/>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </div>
+                
+            </form> }/>
             <div className="profile container route h-100 bg-light mx-auto shadow px-4 row">
             {currentuser.loading ? <p className="alert alert-warning "> loading</p> : null} 
                   <div className="col-md-6">

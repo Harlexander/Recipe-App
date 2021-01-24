@@ -65,7 +65,7 @@ img{
   font-size: 28px;
 }
 .dp {
-  opacity: 1;
+  /* opacity: 1; */
   display: block;
   width: 35vh;
   margin: 0 auto;
@@ -73,7 +73,7 @@ img{
   transition: .5s ease;
   backface-visibility: hidden;
   border-radius: 50%;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 .top-menu{
   height: 20vh;
