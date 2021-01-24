@@ -17,7 +17,7 @@ const CreateRecipe = () => {
         useEffect(() => {redirect()} , [user.user])
         return(
             <>
-            <div className="container h-100 bg-light shadow p-5" style={container}>
+            <div className="container bg-light shadow p-3 route">
             <h2>Create Your Own Recipe</h2>
             <br/>
             <Route exact path={`/create-recipe`}>
@@ -27,9 +27,6 @@ const CreateRecipe = () => {
             <Footer />
             </>
         )
-}
-const container = {
-    marginTop : "-80px",
 }
 
 export default CreateRecipe

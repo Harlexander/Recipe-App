@@ -5,8 +5,8 @@ class CreateRecipe extends Component {
 
     render(){
         return(
-            <div className="profile container h-100 bg-light mx-auto shadow px-4 text-center">
-            <h1 className=" px-3">Reach out and our customer service<br/> will respond you</h1>
+            <div className="profile container h-100 bg-light mx-auto shadow px-1 text-center route">
+            <h3 className=" pt-3 pb-0">Reach out Asap!</h3>
             <div className="row px-5 mt-5">
                 <div className="col-md-6">
                 <form>

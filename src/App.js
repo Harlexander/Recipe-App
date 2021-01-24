@@ -98,7 +98,7 @@ const App = () => {
       <RedirectContext.Provider value={updateSearch}>
       <Router>
         <Scrolltotop>
-        <Header onClick={handlesearch} text={updateSearch} />
+        <Header onClick={handlesearch} text={updateSearch} user={user.user} />
       <Switch>
         <Route exact path="/" >
           <Home text={updateSearch}/>

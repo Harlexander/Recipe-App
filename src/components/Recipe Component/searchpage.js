@@ -24,7 +24,7 @@ const SearchRes= ({recipes, search, spinner}) => {
     const mapped = recipes === undefined ? local : recipes
     return(
         <>
-            <div className="container bg-light py-4 shadow mx-auto row" style={container}>
+            <div className="container bg-light py-4 shadow mx-auto route">
                 <div className="col-md-8 mb-5">
                 <Route exact path='/search'>
                     <Customresult value={search}/>
@@ -47,9 +47,5 @@ const SearchRes= ({recipes, search, spinner}) => {
         </>
     )
 }
-const container = {
-    marginTop : "-80px",
-}
-
 
 export default Searchpage

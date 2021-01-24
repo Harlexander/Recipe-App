@@ -26,7 +26,7 @@ const Home = ({text}) =>{
 const Specials = () => {
     return(
         <>
-        <div className="container bg-light p-4 shadow specials" style={container}>
+        <div className="container bg-light p-4 shadow specials route">
             <div className="">
                 <h3>Top Recipes Of The Day</h3>
                 <p>Sliding recipes are much more tasty as food than sliding</p>
@@ -121,9 +121,5 @@ const HotMeals = ({redirect}) => {
 
 const text = {  
     fontSize : "15px"
-}
-
-const container = {
-    marginTop : "-80px",
 }
 export default Home

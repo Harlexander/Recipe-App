@@ -50,7 +50,7 @@ const Registerform = () => {
     }
     useEffect(() => {redirect()} , [user.loading])
     return (
-        <div className="container bg-light pt-5" style={container}>
+        <div className="container bg-light pt-5 route">
             {user.loading ? <p className="alert alert-warning "> loading</p> : null} 
             <h3>Register</h3>
             {error && <p className="alert alert-danger">{error}</p>}

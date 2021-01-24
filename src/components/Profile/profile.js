@@ -14,7 +14,6 @@ function Profile() {
     const [loader, setLoader] = useState(true)
     const [image, setImage] = useState(null)
     const [user, setUser] = useState(null)
-    const [displayImage, setDisplayImage] = useState(null)
     const [state, setstate] = useState({});
     const [basic, setBasic] = useState({});
     const redirect = () => {
@@ -22,8 +21,11 @@ function Profile() {
             if(!currentuser.user){
                 history.push('/login')
             }else{
-                currentuser.user.providerData.forEach(element => {
-                    setBasic(element)})
+                    setBasic({
+                    displayName :currentuser.user.displayName,
+                    photoURL : currentuser.user.photoURL,
+                    email : currentuser.user.email
+                    })
                 firestore.collection("users").doc(currentuser.user.uid)
                 .onSnapshot(function(doc) {
                     const data = doc.data()
@@ -53,18 +55,19 @@ function Profile() {
             currentuser.user.updateProfile({
                 photoURL : fireBaseUrl
             })
-            setDisplayImage(fireBaseUrl)
             alert("image Uploaded Succesfully Reload Page to See changes")
+            console.log(currentuser.user.photoURL)
           })
        })
    }
 
+   console.log(currentuser.user)
     useEffect(() => {redirect()} , [currentuser.user])
     return (
         <div>
             <Modal />
 
-            <div className="profile container h-100 bg-light mx-auto shadow px-4 row">
+            <div className="profile container route h-100 bg-light mx-auto shadow px-4 row">
             {currentuser.loading ? <p className="alert alert-warning "> loading</p> : null} 
                   <div className="col-md-6">
                       <div className="dp-container m-2">
@@ -79,8 +82,9 @@ function Profile() {
                   </div>
                   <div className="col-md-6">
                       <div>
-                         <h2 className="py-2 font-weight-light">Hey {basic.displayName} <button className="pull-right btn btn-primary" onClick={() => {auth.signOut().then(()=> {history.push('/login')})}}>log out</button></h2>
-                          <ul className="list-group">
+                         <h2 className="py-2 font-weight-light">Hey {basic.displayName}</h2>
+                         <div>
+                              <ul className="list-group">
                           <li className="list-group-item">Name : <span>{state.fullname}</span></li>
                           <li className="list-group-item">Email : <span>{basic.email}</span></li>
                           <li className="list-group-item">Mobile : <span>{state.mobile}</span></li>
@@ -88,6 +92,8 @@ function Profile() {
                           <li className="list-group-item">Skills : <span>{state.skills}</span></li>
                           <li className="list-group-item">Country : <span>{state.country}</span></li>
                         </ul>
+                         </div>
+                         
                         <div>
                         <a href={state.facebookUrl} target="_parent"><button className="btn btn-primary rounded-circle fa fa-facebook shadow p-3 m-3" type="button"></button></a>
                         <a href={state.instagramUrl} target="_blank"><button className="btn btn-danger rounded-circle fa fa-instagram shadow  p-3 m-3" type="button"></button></a>

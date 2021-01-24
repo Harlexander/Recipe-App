@@ -1,11 +1,10 @@
-import react, {Component} from "react"
 import SearchBar from "./searchbar"
 import { Link } from "react-router-dom";
 
 const TopHeader = ({onClick, text}) => {
     return(
         <>
-        <div className="jumbotron pt-4 px-2">
+        <div className="jumbotron pt-4 px-2 mb-0 top-menu">
                 <div className="row px-5 mb-5 mb-md-2">
                 <h4  className=" d-md-inline d-none font-weight-light">Recipe Search</h4>
             <SearchBar onClick={(event, history) => onClick(event, history)} classes={"col-md-3"}/>

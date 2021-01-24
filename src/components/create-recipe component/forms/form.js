@@ -139,9 +139,9 @@ const Form = () => {
             </div>
             <div className="form-group">
                 <label>Recipe Ingredients</label>
-                <div className="container p-4 bg-light shadow-lg mb-3 rounded">
+                <div className="container p-1 bg-light shadow-lg mb-3 rounded">
               {inputs.map((items,index) => (
-                    <div className="input-group my-2 w-50 mx-auto" key={index}>
+                    <div className="input-group my-2 w-75 mx-auto" key={index}>
                     <input type="text"style={rad} className="form-control bg-light shadow" name="recipes" value={items.recipes} onChange={(e) => handlechange(e, index)}/>
                    { inputs.length !== 1 && <div className="input-group-prepend px-2">
                         <button type="button" className="btn btn-danger rounded-circle fa fa-remove shadow" onClick={() => removeItem(index)}></button>
@@ -153,9 +153,9 @@ const Form = () => {
            </div>
             <div className="form-group">
                 <label>Recipe Instruction</label>
-                <div className="container p-4 bg-light shadow-lg mb-3 rounded ">
+                <div className="container p-1 bg-light shadow-lg mb-3 rounded ">
                 {textarea.map((items,index) => (
-                    <div className="input-group my-2 w-50 mx-auto" key={index}>
+                    <div className="input-group my-2 w-75 mx-auto" key={index}>
                     <textarea type="text"style={rad} value = {items.instruction} name="instruction" className="form-control bg-light shadow" onChange={(e) => handletext(e , index)}/>
                     {textarea.length !== 1 && <div className="input-group-prepend px-2">
                         <button type ="button" className="btn btn-danger rounded-circle fa fa-remove shadow" onClick={() => removetext(index)}></button>
@@ -248,19 +248,6 @@ const Form = () => {
             <input  type="submit" className="btn btn-outline-primary my-4 p-2 w-100 "/>
             
         </form>
-        <button onClick={() => {
-            const washingtonRef = firestore.collection('timestamp');
-            washingtonRef.add({
-               time: new Date()
-           })
-           .then(() => {
-               firestore.collection("timestamp")
-               .get()
-               .then((snapshot) => snapshot.docs.map( doc => console.log(doc.data())))
-           })
-           .catch(err => {
-               console.log(" error : " + err)
-           })}}>Click me</button>
            </>
     )
 }

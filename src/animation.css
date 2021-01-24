@@ -75,6 +75,9 @@ img{
   border-radius: 50%;
   object-fit: cover;
 }
+.top-menu{
+  height: 20vh;
+}
 
 .edit {
   transition: .5s ease;

@@ -2,12 +2,13 @@ import React  from  'react';
 import Logo  from  '../images/LogoMakr-4NpRxA.png';
 import TopHeader from './top-header/top-header'
 import {  BrowserRouter as Router, Link} from "react-router-dom";
+import { auth } from './create-recipe component/firebase/firebase';
 
-const Header = ({onClick, text}) => {
+const Header = ({onClick, text, user}) => {
   return(
     <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top" style={img}>
-      <img src={Logo} style={logo} className="m-auto"/>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light" style={img}>
+      <img src={Logo} style={logo} className="m-auto navbar-brand"/>
       <button className="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -27,6 +28,9 @@ const Header = ({onClick, text}) => {
           </li>
           <li className="nav-item">
           <Link to="/profile" className="nav-link">Profile</Link>
+          </li>
+          <li className="nav-item">
+          <button onClick={() => {auth.signOut()}}  className="nav-link border-0 bg-light">{user && "Sign Out"}</button>
           </li>
         </ul>
       </div>

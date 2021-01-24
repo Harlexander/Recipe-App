@@ -32,7 +32,7 @@ const Loginform = () => {
     }
     useEffect(() => {redirect()}, [user.user])
     return (
-        <div className="container bg-light pt-5" style={container}>
+        <div className="container bg-light pt-5 route">
            {user.loading ? <p className="alert alert-warning "> loading</p> : null} 
            <h3>Sign In</h3>
             {error && <p className="alert alert-danger">{error}</p>}
@@ -54,8 +54,8 @@ const Loginform = () => {
             <button type="button" className="btn btn-primary" onClick={signin}>Submit</button>     
                 </div>
                 <div class="col-md-6 text-center p-4">
-                <button className="fb btn w-50 " onClick={(e) => popup(e, facebookprovider)}><i class="fa fa-facebook fa-fw"></i> Facebook Sign-in</button><br/><br/>
-                <button className="twitter btn w-50"><i class="fa fa-twitter fa-fw"></i>Twitter Sign in </button><br/><br/>
+                <button className="fb btn w-50 " onClick={(e) => {alert("This feature is unavailable sign-in with Google /Email"); e.preventDefault()}}><i class="fa fa-facebook fa-fw"></i> Facebook Sign-in</button><br/><br/>
+                <button className="twitter btn w-50"  onClick={(e) => {alert("This feature is unavailable sign-in with Google /Email"); e.preventDefault()}}><i class="fa fa-twitter fa-fw"></i>Twitter Sign in </button><br/><br/>
                 <button className="google btn  w-50"onClick={(e) => popup(e, googleprovider)}><i class="fa fa-google fa-fw" ></i>Google Sign in </button>
             </div>
             </form>
@@ -63,9 +63,6 @@ const Loginform = () => {
         </div>
         
     )
-}
-const container = {
-    marginTop : "-80px",
 }
 
 export default Loginform
